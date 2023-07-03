@@ -7,11 +7,8 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 
 @Repository
-public interface UserDao {
-    public User getUserByUserId(Long userId);
-    public void updateUser(Long userId, User user);
-    public void deleteUser(Long userId);
-    public List<User> getAllUsers();
+public interface UserDao extends JpaRepository<User,Long> {
+
 }
 
 //@Repository

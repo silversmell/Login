@@ -20,18 +20,27 @@ public class UserController {
     public List<User> getAllUsers(){
         return userService.getAllUser();
     }
-    @GetMapping("/{userid}") //pathvariable에 넣은 userid를 찾음
-    public User getUserByUserId(@PathVariable Long userid){
-        return userService.getUserByUserId(userid);
+    @PostMapping("/join")
+    public User join(@RequestBody User user){
+        return userService.join(user);
     }
-    @PutMapping("/{userid}") //유저 아이디변경
-    public void modifyUser(@PathVariable Long userid, @RequestBody User user){
-        userService.modifyUser(userid,user);
+    @PostMapping("/delete")
+    public void delete(@RequestBody User user){
+        userService.deleteUser(user);
     }
 
-    @DeleteMapping("/{userid}")
-    public void removeUser(@PathVariable Long userid){
-        userService.removeUser(userid);
-    }
+//    @GetMapping("/{userid}") //pathvariable에 넣은 userid를 찾음
+//    public User getUserByUserId(@PathVariable Long userid){
+//        return userService.getUserByUserId(userid);
+//    }
+//    @PutMapping("/{userid}") //유저 아이디변경
+//    public void modifyUser(@PathVariable Long userid, @RequestBody User user){
+//        userService.modifyUser(userid,user);
+//    }
+//
+//    @DeleteMapping("/{userid}")
+//    public void removeUser(@PathVariable Long userid){
+//        userService.removeUser(userid);
+//    }
 
 }
