@@ -14,19 +14,15 @@ import java.time.LocalDate;
 @Setter
 @Getter
 public class User {
-    @Id
     @Column
     @GeneratedValue
-    private Long userId;
+    @Id
+    private Long userid;
     @Column
     private String userName;
     @Column
     private String userPassword;
     @Column
     private LocalDate birth;
-
-
-
-
 
 }

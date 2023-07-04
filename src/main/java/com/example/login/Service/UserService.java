@@ -22,7 +22,7 @@ public class UserService {
         this.userDao=userDao;
     }
     public User join(User user){ //가입하고 ->같은 id일경우 중복처리
-        Optional<User> exist = userDao.findById(user.getUserId());
+        Optional<User> exist = userDao.findById(user.getUserid());
         if(exist.isPresent()){
             throw new ResponseStatusException(HttpStatus.CONFLICT,"존재하는 ID입니다.");
         }
@@ -32,8 +32,12 @@ public class UserService {
         return userDao.findAll();
     }
     public void deleteUser(User user){ //userid에 의해 id를 삭제
-        userDao.deleteById(user.getUserId());
+        userDao.deleteById(user.getUserid());
+    }
+    public Optional<User> getUserLoginCheck(User user) {//로그인 체크
+        return userDao.findByUseridAndUserPassword(user.getUserid(), user.getUserPassword());
     }
 }
+
 
 
