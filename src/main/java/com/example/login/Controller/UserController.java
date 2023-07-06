@@ -40,19 +40,4 @@ public class UserController {
         userService.deleteUser(user);
     }
 
-
-//    @GetMapping("/{userid}") //pathvariable에 넣은 userid를 찾음
-//    public User getUserByUserId(@PathVariable Long userid){
-//        return userService.getUserByUserId(userid);
-//    }
-//    @PutMapping("/{userid}") //유저 아이디변경
-//    public void modifyUser(@PathVariable Long userid, @RequestBody User user){
-//        userService.modifyUser(userid,user);
-//    }
-//
-//    @DeleteMapping("/{userid}")
-//    public void removeUser(@PathVariable Long userid){
-//        userService.removeUser(userid);
-//    }
-
 }

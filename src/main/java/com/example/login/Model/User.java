@@ -15,7 +15,6 @@ import java.time.LocalDate;
 @Getter
 public class User {
     @Column
-    @GeneratedValue
     @Id
     private Long userid;
     @Column
@@ -24,5 +23,4 @@ public class User {
     private String userPassword;
     @Column
     private LocalDate birth;
-
 }
